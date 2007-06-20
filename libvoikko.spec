@@ -5,6 +5,7 @@
 
 %define major	1
 %define libname	%mklibname voikko %major
+%define devname	%mklibname voikko -d
 
 Summary:	A spellchecker/hyphenator library using Malaga
 Name:		%name
@@ -49,14 +50,15 @@ written in C.
 This package contains the library needed to run programs dynamically
 linked with libvoikko.
 
-%package -n %libname-devel
+%package -n %devname
 Summary:	Headers and static library for libvoikko development
 Group:		Development/C
 Requires:	%libname = %version
 Provides:	libvoikko-devel = %version-%release
 Provides:	voikko-devel = %version-%release
+Obsoletes:	%{_lib}voikko1-devel
 
-%description -n %libname-devel
+%description -n %devname
 This is libvoikko, library for spellcheckers and hyphenators using
 Malaga natural language grammar development tool. The library is
 written in C.
@@ -94,7 +96,7 @@ rm -rf %{buildroot}
 %doc README
 %{_libdir}/*.so.%{major}*
 
-%files -n %libname-devel
+%files -n %devname
 %doc README
 %{_libdir}/*.a
 %{_libdir}/*.la
