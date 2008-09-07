@@ -1,6 +1,6 @@
 
 %define name	libvoikko
-%define version	1.7
+%define version	2.0
 %define rel	1
 
 %define major	1
@@ -91,8 +91,10 @@ rm -rf %{buildroot}
 %files -n voikko-tools
 %defattr(-,root,root)
 %doc README
+%{_bindir}/voikkogc
 %{_bindir}/voikkospell
 %{_bindir}/voikkohyphenate
+%{_mandir}/man1/voikkogc.1*
 %{_mandir}/man1/voikkospell.1*
 %{_mandir}/man1/voikkohyphenate.1*
 
@@ -106,5 +108,5 @@ rm -rf %{buildroot}
 %{_libdir}/*.la
 %{_libdir}/*.so
 %{_includedir}/%{name}
-
+%{_libdir}/pkgconfig/%{name}.pc
 
