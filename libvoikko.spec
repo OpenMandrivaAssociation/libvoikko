@@ -1,6 +1,7 @@
 
 %define name	libvoikko
-%define version	2.1
+%define version	2.2
+%define prever	rc2
 %define rel	1
 
 %define major	1
@@ -10,13 +11,21 @@
 Summary:	A spellchecker/hyphenator library using Malaga
 Name:		%name
 Version:	%version
+%if %prever
+Release:	%mkrel 0.%prever.%rel
+%else
 Release:	%mkrel %rel
+%endif
 License:	GPLv2+
 Group:		Text tools
 URL:		http://voikko.sourceforge.net/
+%if %prever
+Source:		http://www.puimula.org/htp/testing/%name-%version%prever.tar.gz
+%else
 Source:		http://downloads.sourceforge.net/voikko/%name-%version.tar.gz
+%endif
 BuildRoot:	%{_tmppath}/%{name}-root
-BuildRequires:	malaga-devel
+BuildRequires:	glib2-devel
 
 %description
 This is libvoikko, library for spellcheckers and hyphenators using
