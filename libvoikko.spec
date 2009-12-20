@@ -1,6 +1,6 @@
 
 %define name	libvoikko
-%define version	2.2.1
+%define version	2.2.2
 %define prever	0
 %define rel	1
 
