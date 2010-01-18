@@ -26,6 +26,7 @@ Source:		http://downloads.sourceforge.net/voikko/%name-%version.tar.gz
 %endif
 BuildRoot:	%{_tmppath}/%{name}-root
 BuildRequires:	glib2-devel
+BuildRequires:	python
 
 %description
 This is libvoikko, library for spellcheckers and hyphenators using
