@@ -2,7 +2,7 @@
 %define name	libvoikko
 %define version	2.2.2
 %define prever	0
-%define rel	1
+%define rel	2
 
 %define major	1
 %define libname	%mklibname voikko %major
