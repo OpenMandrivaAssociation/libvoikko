@@ -2,7 +2,7 @@
 %define name	libvoikko
 %define version	2.2.2
 %define prever	0
-%define rel	2
+%define rel	3
 
 %define major	1
 %define libname	%mklibname voikko %major
@@ -77,6 +77,20 @@ This package contains the headers and static library that
 programmers will need to develop applications which will use
 libvoikko.
 
+%package -n python-%name
+Summary:	Python bindings for libvoikko
+Group:		Development/Python
+Requires:	%libname
+Requires:	voikko-dictionary
+%py_requires
+
+%description -n python-%name
+This is libvoikko, library for spellcheckers and hyphenators using
+Malaga natural language grammar development tool. The library is
+written in C.
+
+This package contains the Python bindings for libvoikko.
+
 %prep
 %setup -q
 
@@ -87,6 +101,8 @@ libvoikko.
 %install
 rm -rf %{buildroot}
 %makeinstall_std
+
+install -D -m644 python/libvoikko.py %{buildroot}%{python_sitelib}/libvoikko.py
 
 %clean
 rm -rf %{buildroot}
@@ -119,4 +135,8 @@ rm -rf %{buildroot}
 %{_libdir}/*.so
 %{_includedir}/%{name}
 %{_libdir}/pkgconfig/%{name}.pc
+
+%files -n python-%name
+%doc README
+%{python_sitelib}/libvoikko.py
 
