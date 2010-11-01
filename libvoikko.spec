@@ -2,7 +2,7 @@
 %define name	libvoikko
 %define version	3.0
 %define prever	0
-%define rel	1
+%define rel	2
 
 %define major	1
 %define libname	%mklibname voikko %major
@@ -82,7 +82,6 @@ Summary:	Python bindings for libvoikko
 Group:		Development/Python
 Requires:	%libname
 Requires:	voikko-dictionary
-%py_requires
 
 %description -n python-%name
 This is libvoikko, library for spellcheckers and hyphenators using
