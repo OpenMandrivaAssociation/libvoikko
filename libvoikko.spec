@@ -1,8 +1,8 @@
 
 %define name	libvoikko
-%define version	3.0
+%define version	3.1
 %define prever	0
-%define rel	2
+%define rel	1
 
 %define major	1
 %define libname	%mklibname voikko %major
