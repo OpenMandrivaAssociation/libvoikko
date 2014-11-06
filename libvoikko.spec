@@ -1,11 +1,12 @@
 %define major	1
 %define libname	%mklibname voikko %{major}
 %define devname	%mklibname voikko -d
+%define debug_package %{nil}
 
 Summary:	A spellchecker/hyphenator library using Malaga
 Name:		libvoikko
-Version:	3.5
-Release:	8
+Version:	3.7.1
+Release:	1
 License:	GPLv2+
 Group:		Text tools
 Url:		http://voikko.sourceforge.net/
@@ -69,9 +70,12 @@ This package contains the Python bindings for libvoikko.
 %prep
 %setup -q
 
+#build tools only work with py2
+sed -i 's/python/python2/' src/Makefile.*
+
 %build
-%configure2_5x \
-	--disable-static
+export CFLAGS="$CFLAGS -Wno-error" CXXFLAGS="$CXXFLAGS -Wno-error"
+%configure
 
 %make
 
@@ -85,11 +89,9 @@ install -D -m644 python/libvoikko.py %{buildroot}%{python_sitelib}/libvoikko.py
 %{_bindir}/voikkogc
 %{_bindir}/voikkospell
 %{_bindir}/voikkohyphenate
-%{_bindir}/voikkovfstc
 %{_mandir}/man1/voikkogc.1*
 %{_mandir}/man1/voikkospell.1*
 %{_mandir}/man1/voikkohyphenate.1*
-%{_mandir}/man1/voikkovfstc.1*
 
 %files -n %{libname}
 %{_libdir}/libvoikko.so.%{major}*
