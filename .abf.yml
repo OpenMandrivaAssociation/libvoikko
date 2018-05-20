@@ -1,4 +1,2 @@
-removed_sources:
-  libvoikko-3.5.tar.gz: f735d68a559ca48a0890b4dd82a2e52732fbada3
 sources:
-  libvoikko-3.7.1.tar.gz: b6d7ec669bbc33ba5f526f53b1d297f9ee315178
+  libvoikko-3.8.tar.gz: 5e01dbe8437e547d06edfea60b7ea16bbb5d88ef
