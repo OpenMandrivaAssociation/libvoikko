@@ -5,8 +5,8 @@
 
 Summary:	A spellchecker/hyphenator library using Malaga
 Name:		libvoikko
-Version:	3.8
-Release:	3
+Version:	4.2
+Release:	1
 License:	GPLv2+
 Group:		Text tools
 Url:		http://voikko.puimula.org/sources.html
@@ -14,6 +14,7 @@ Source0:	https://www.puimula.org/voikko-sources/libvoikko/%{name}-%{version}.tar
 
 BuildRequires:	python
 BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:	pkgconfig(hfstospell)
 
 %description
 This is libvoikko, library for spellcheckers and hyphenators using
@@ -89,9 +90,11 @@ install -D -m644 python/libvoikko.py %{buildroot}%{python_sitelib}/libvoikko.py
 %{_bindir}/voikkogc
 %{_bindir}/voikkospell
 %{_bindir}/voikkohyphenate
+%{_bindir}/voikkovfstc
 %{_mandir}/man1/voikkogc.1*
 %{_mandir}/man1/voikkospell.1*
 %{_mandir}/man1/voikkohyphenate.1*
+%{_mandir}/man1/voikkovfstc.1.*
 
 %files -n %{libname}
 %{_libdir}/libvoikko.so.%{major}*
