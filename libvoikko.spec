@@ -5,7 +5,7 @@
 
 Summary:	A spellchecker/hyphenator library using Malaga
 Name:		libvoikko
-Version:	4.2
+Version:	4.3
 Release:	1
 License:	GPLv2+
 Group:		Text tools
