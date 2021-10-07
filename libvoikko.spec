@@ -1,7 +1,6 @@
 %define major	1
 %define libname	%mklibname voikko %{major}
 %define devname	%mklibname voikko -d
-%define debug_package %{nil}
 
 Summary:	A spellchecker/hyphenator library using Malaga
 Name:		libvoikko
@@ -69,7 +68,7 @@ written in C.
 This package contains the Python bindings for libvoikko.
 
 %prep
-%setup -q
+%autosetup -p1
 
 #build tools only work with py2
 sed -i 's/python/python2/' src/Makefile.*
@@ -78,10 +77,10 @@ sed -i 's/python/python2/' src/Makefile.*
 export CFLAGS="$CFLAGS -Wno-error" CXXFLAGS="$CXXFLAGS -Wno-error"
 %configure
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 install -D -m644 python/libvoikko.py %{buildroot}%{python_sitelib}/libvoikko.py
 
