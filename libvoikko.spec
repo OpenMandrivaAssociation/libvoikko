@@ -1,3 +1,6 @@
+# Work around incomplete debug packages
+%global _empty_manifest_terminate_build 0
+
 %define major	1
 %define libname	%mklibname voikko %{major}
 %define devname	%mklibname voikko -d
