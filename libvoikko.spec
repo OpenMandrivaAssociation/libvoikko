@@ -1,5 +1,4 @@
-# Work around incomplete debug packages
-%global _empty_manifest_terminate_build 0
+%undefine _debugsource_packages
 
 %define major	1
 %define libname	%mklibname voikko %{major}
@@ -7,8 +6,8 @@
 
 Summary:	A spellchecker/hyphenator library using Malaga
 Name:		libvoikko
-Version:	4.3.1
-Release:	3
+Version:	4.3.2
+Release:	1
 License:	GPLv2+
 Group:		Text tools
 Url:		http://voikko.puimula.org/sources.html
@@ -109,4 +108,3 @@ install -D -m644 python/libvoikko.py %{buildroot}%{python_sitelib}/libvoikko.py
 %files -n python-%{name}
 %doc README
 %{python_sitelib}/libvoikko.py
-%{python_sitelib}/__pycache__/*
