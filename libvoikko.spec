@@ -10,7 +10,7 @@ Version:	4.3.2
 Release:	1
 License:	GPLv2+
 Group:		Text tools
-Url:		http://voikko.puimula.org/sources.html
+Url:		https://voikko.puimula.org/sources.html
 Source0:	https://www.puimula.org/voikko-sources/libvoikko/%{name}-%{version}.tar.gz
 
 BuildRequires:	python
