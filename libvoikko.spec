@@ -7,7 +7,7 @@
 Summary:	A spellchecker/hyphenator library using Malaga
 Name:		libvoikko
 Version:	4.3.3
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Text tools
 Url:		https://voikko.puimula.org/sources.html
