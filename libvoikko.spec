@@ -13,6 +13,11 @@ Group:		Text tools
 Url:		https://voikko.puimula.org/sources.html
 Source0:	https://www.puimula.org/voikko-sources/libvoikko/%{name}-%{version}.tar.gz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	python
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(hfstospell)
